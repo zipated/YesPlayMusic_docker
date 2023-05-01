@@ -2,9 +2,8 @@ services:
   YesPlayMusic:
     container_name: yesplaymusic
     image: registry.cn-hangzhou.aliyuncs.com/zipated/yesplaymusic:latest
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /etc/timezone:/etc/timezone:ro
+    environment:
+      - TZ=Asia/Shanghai
     ports:
       - 3000:80
     restart: always
